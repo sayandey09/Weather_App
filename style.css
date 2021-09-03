@@ -1,0 +1,190 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0px auto;
+  padding: 0 1rem;
+}
+
+body {
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+header {
+  padding: 20px 0;
+  background: darkslategray;
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#time {
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.container.container-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.output,
+.card {
+  padding: 2rem;
+  width: 500px;
+  border-radius: 5px;
+  box-shadow: 10px 8px 20px rgba(0, 0, 0, 0.1);
+}
+/* output */
+.output {
+  background-color: rgb(17, 19, 22);
+  color: rgb(161, 165, 124);
+}
+
+.output .temp {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.output .temp small {
+  align-self: flex-end;
+}
+
+.output .loc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.output .loc img {
+  width: 70px;
+}
+
+.output .temp-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.output .temp-desc p {
+  text-transform: capitalize;
+}
+
+.output ul {
+  text-align: center;
+}
+.output ul li {
+  border: 1px dashed darkviolet;
+  border-radius: 3px;
+  padding: 5px 0;
+}
+/* card */
+.card {
+  background: cornflowerblue;
+  color: azure;
+}
+
+form > .form-group {
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+form > .form-group:nth-of-type(1) {
+  margin-top: 0;
+}
+
+form > .form-group label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+form > .form-group input {
+  border: none;
+  border-radius: 3px;
+  padding-left: 8px;
+}
+
+::placeholder {
+  color: rgb(0, 5, 5);
+  opacity: 0.5;
+}
+
+form > .form-group input:focus {
+  outline: none;
+}
+form .btn-from-group {
+  padding-top: 0rem;
+}
+form .btn-from-group button {
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  color: chocolate;
+  letter-spacing: 16px;
+  text-transform: uppercase;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+}
+
+form .btn-from-group button:hover {
+  opacity: 0.9;
+}
+
+form .btn-from-group button:active {
+  transform: scale(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.errAlert {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+  background: rgb(189, 31, 31);
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  display: none;
+}
+
+.errAlert #errText {
+  font-size: 1rem;
+}
+
+footer {
+  margin-top: 3rem;
+  padding: 2rem 0;
+  background: #2f4f4f;
+  width: 100%;
+  color: #f4f49daf;
+}
+
+footer .container p {
+  text-align: center;
+}
+
+footer .container p a {
+  color: #e0e0e0;
+}
