@@ -56,6 +56,7 @@ header .container {
   color: #e0e0e0;
   border-radius: 7px;
 }
+
 .output,
 .card {
   padding: 2rem;
@@ -198,4 +199,47 @@ footer .container p {
 
 footer .container p a {
   color: #e0e0e0;
+}
+
+@media (max-width: 678px) {
+  header {
+    width: 100vw;
+  }
+  .output,
+  .card {
+    width: auto;
+  }
+
+  header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: space-between;
+  }
+  #time {
+    font-size: 14px;
+  }
+
+  form > .form-group label {
+    font-size: 1rem;
+  }
+  ::placeholder {
+    font-size: 10px;
+  }
+
+  #temperature {
+    font-size: 1rem;
+  }
+
+  #feelLike {
+    font-size: 0.7rem;
+    margin: 12px 0;
+  }
+
+  .container.container-card > .timeD {
+    border-radius: 0;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+  }
 }
