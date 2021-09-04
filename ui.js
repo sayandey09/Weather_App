@@ -9,6 +9,8 @@ class Ui {
     this.icon = document.getElementById("w-icon");
     this.desc = document.getElementById("desc");
     this.errAlert = document.querySelector(".errAlert");
+    this.sunTime = document.querySelector(".container.container-card > .timeD");
+    this.t = document.querySelector("#time");
   }
 
   printDetails(info) {
@@ -39,5 +41,14 @@ class Ui {
     setTimeout(() => {
       this.errAlert.style.display = "none";
     }, 3000);
+  }
+
+  sunDetails(sunrise, sunset) {
+    console.log(this.sunTime);
+    this.sunTime.textContent = ` SunRise : ${sunrise} | SunSet : ${sunset} `;
+  }
+
+  printDate(dt) {
+    this.t.textContent = dt;
   }
 }

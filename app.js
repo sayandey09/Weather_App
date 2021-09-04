@@ -15,6 +15,17 @@ document.getElementById("btn").addEventListener("click", (e) => {
   } else {
     weather.getWeather(city.value, country.value).then((data) => {
       ui.printDetails(data);
+      console.log(data.timezone);
+      console.log(weather.getTime(data));
+
+      setInterval(() => {
+        ui.printDate(weather.getTime(data).dt);
+      }, 1000);
+
+      ui.sunDetails(
+        weather.getTime(data).sunriseTime,
+        weather.getTime(data).sunsetTime
+      );
     });
   }
 
@@ -26,10 +37,14 @@ document.getElementById("btn").addEventListener("click", (e) => {
 document.addEventListener("DOMContentLoaded", function () {
   weather.getWeather("kolkata", "India").then((data) => {
     ui.printDetails(data);
+    console.log(data);
+    console.log(weather.getTime(data));
     setInterval(() => {
-      document.getElementById("time").textContent = weather.getTime(
-        data.timezone
-      );
+      ui.printDate(weather.getTime(data).dt);
     }, 1000);
+    ui.sunDetails(
+      weather.getTime(data).sunriseTime,
+      weather.getTime(data).sunsetTime
+    );
   });
 });

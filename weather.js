@@ -12,7 +12,9 @@ class Weather {
     return res;
   }
 
-  getTime(timezone) {
+  getTime(data) {
+    //
+    let timezone = data.timezone;
     const nowInLocalTime = Date.now() + 1000 * (timezone / 3600);
     const millitime = new Date(nowInLocalTime);
     const dateFormat = millitime.toLocaleString();
@@ -24,6 +26,17 @@ class Weather {
     let hours = millitime.toLocaleString("en-US", { hour: "numeric" });
     let minutes = millitime.toLocaleString("en-US", { minute: "numeric" });
 
-    return `${day} ${date} ${month} ${year} ${hours} : ${minutes} Minute`;
+    let dt = `${day} ${date} ${month} ${year} ${hours} : ${minutes} Minutes`;
+
+    //
+    let sunrise = new Date(data.sys.sunrise * 1000);
+    let sunset = new Date(data.sys.sunset * 1000);
+    let sunriseTime = `${sunrise.getHours()} : ${sunrise.getMinutes()}`;
+    let sunsetTime = `${sunset.getHours()} : ${sunset.getMinutes()}`;
+    return {
+      sunriseTime,
+      sunsetTime,
+      dt,
+    };
   }
 }
